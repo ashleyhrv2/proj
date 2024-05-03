@@ -1,0 +1,28 @@
+'''
+Created on May 3, 2024
+
+@author: Student
+'''
+from os import path
+
+
+def mainmenu():
+    filename = (input("please enter your osis number"));
+    filename = filename + ".txt";
+    
+    ifexists = bool(path.exists(filename));
+    
+    if(ifexists == False):
+        pythfile = open(filename,"w");
+        print("File created and opened successfully")
+        pythfile = open(filename,)
+    else:
+        print("File exists. What would you like to do")
+        menumsg = "\n1-write file\n2-Read file\n3-Append file"
+        print(menumsg);
+        whichoption = input("Select an operation: ")
+           
+def main():
+    mainmenu()    
+if __name__=="__main__":
+    main();
