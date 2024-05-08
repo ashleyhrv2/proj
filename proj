@@ -4,9 +4,23 @@ Created on May 3, 2024
 @author: Student
 '''
 from os import path
-
-
+def append():
+    pythfile = open(filename,"r");
+    print(pythfile.readline());
+    pythfile = open(filename,"a")
+    newwork = str(input("What would you like to add"));
+    pythfile.write(newwork);    
+def read():
+    pythfile = open(filename,"r");
+    print(pythfile.readline());
+def write():
+    pythfile = open(filename,"r");
+    words = str(input("Enter your name "))
+    pythfile = open(filename,"w");
+    pythfile.write(words); 
+    pythfile.close()   
 def mainmenu():
+    global filename
     filename = (input("please enter your osis number"));
     filename = filename + ".txt";
     
@@ -21,7 +35,15 @@ def mainmenu():
         menumsg = "\n1-write file\n2-Read file\n3-Append file"
         print(menumsg);
         whichoption = input("Select an operation: ")
-           
+        match int(whichoption):
+            case 1:
+                write();
+            
+            case 2:
+                read();
+            case 3:
+                append();
+              
 def main():
     mainmenu()    
 if __name__=="__main__":
